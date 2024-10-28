@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption TP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Encryption TP</h1>
+        
+        <div class="chat-section">
+            <div class="chat" id="chat-a">
+                <h2>User B</h2>
+                <div class="messages" id="messages-a"></div>
+                <input type="text" id="input-a" placeholder="Type a message..." />
+                <select id="encryption-method-a">
+                    <option value="mirror">Mirror Encryption</option>
+                    <option value="affine">Affine Cipher</option>
+                    <option value="shift">Shift Cipher</option>
+                    <option value="caesar">Caesar Cipher</option>
+                </select>
+                <button onclick="sendMessage('A')">Send</button>
+            </div>
+
+            <div class="chat" id="chat-b">
+                <h2>User A</h2>
+                <div class="messages" id="messages-b"></div>
+                <input type="text" id="input-b" placeholder="Type a message..." />
+                <select id="encryption-method-b">
+                    <option value="mirror">Mirror Encryption</option>
+                    <option value="affine">Affine Cipher</option>
+                    <option value="shift">Shift Cipher</option>
+                    <option value="caesar">Caesar Cipher</option>
+                </select>
+                <button onclick="sendMessage('B')">Send</button>
+            </div>
+        </div>
+
+        <div class="password-section">
+            <h2>Password Generation</h2>
+            <!--<input type="text" id="password-input" placeholder="Enter password" oninput="evaluatePassword()" />
+            <button onclick="testPassword()">Test Password</button>
+            <p id="password-strength" class="strength-indicator"></p>
+            <p id="attack-result"></p>->
+        
+            <!-- Password Generation Buttons -->
+            <button onclick="generatePasswordType1()">Generate 3-digit password (0-2)</button>
+            <button onclick="generatePasswordType2()">Generate 6-digit password (0-9)</button>
+            <button onclick="generatePasswordType3()">Generate 6-char password (a-z, A-Z, 0-9, +, *)</button>
+            <p id="generated-password"></p>
+        </div>
+        
+    </div>
+
+    <div class="info-card">
+        <h2>Encryption Methods</h2>
+        <div class="encryption-method">
+            <h3>Mirror Encryption</h3>
+            <p>No keys needed. Simply reverses the string.</p>
+        </div>
+        <div class="encryption-method">
+            <h3>Affine Cipher</h3>
+            <p>Keys: a = 5, b = 8</p>
+            <p>Formula: Y = (5X + 8) mod 26</p>
+        </div>
+        <div class="encryption-method">
+            <h3>Shift Cipher</h3>
+            <p>Key: Shift by n (n = 2)</p>
+            <p>Encrypts characters by shifting their position.</p>
+        </div>
+        <div class="encryption-method">
+            <h3>Caesar Cipher</h3>
+            <p>Key: Shift by n (n = 3)</p>
+            <p>A special case of the Shift Cipher.</p>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
